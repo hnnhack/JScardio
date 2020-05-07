@@ -68,17 +68,13 @@
       console.table(oldest);
 
       // 6.Create a list of Boulevards in Paris that contains 'de' anywhere in the name.
-
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
       // const category = document.querySelector('.mw-category');
-
       // const links = Array.from(category.querySelectorAll('a'));
-
       // const de = links.map((link) => link.textContent).filter((street) => street.includes('de'));
 
       // 7. Sort exercise.
-
       // Sort the people alphabetically by lastname.
       const alpha = people.sort((lastOne, nextOne) => {
         const [alast, afirst] = lastOne.split(', ');
@@ -130,7 +126,6 @@
       console.log(transport);
 
       // Some and Every checks
-
       // Array.prototype.some() // is at least one person 19?
       const isAdult = person.some((adult) => new Date().getFullYear() - adult.year > 18);
 
@@ -142,23 +137,19 @@
       console.log(allAdults);
 
       // Array.prototype.find()
-
       // Find is like filter, but instead returns just one you are looking for
-
       // find the comment with id 823423
       const comment = comments.find((comment) => comment.id === 823423);
 
       console.log(comment);
 
       // Array.prototype.findIndex()
-
       // find the comment with this id
       const index = comments.findIndex((comment) => comment.id === 823423);
 
       console.log(index);
 
       // delete the comment with id 823423
-
       // comments.splice(index, 1);
 
       const newComments = [...comments.slice(0, index), ...comments.slice(index + 1)];
