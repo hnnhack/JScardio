@@ -6,11 +6,11 @@
 // the Fahrenheit temperature equivalent to the given Celsius temperature.
 // Use the algorithm mentioned above to help convert the Celsius temperature to Fahrenheit.
 
-function convertToF(celsius) {
+const convertToF = (celsius) => {
   let fahrenheit;
   fahrenheit = (celsius * 9) / 5 + 32;
   return fahrenheit;
-}
+};
 
 convertToF(30);
 
@@ -21,9 +21,7 @@ convertToF(30);
 
 // Your result must be a string.
 
-function reverseString(str) {
-  return str.split('').reverse().join('');
-}
+const reverseString = (str) => str.split('').reverse().join('');
 
 reverseString('hello');
 
@@ -34,13 +32,13 @@ reverseString('hello');
 // For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
 // Only integers greater than or equal to zero will be supplied to the function.
 
-function factorialize(num) {
+const factorialize = (num) => {
   if (num < 0) return -1;
   else if (num == 0) return 1;
   else {
     return num * factorialize(num - 1);
   }
-}
+};
 
 factorialize(5);
 
@@ -48,12 +46,12 @@ factorialize(5);
 // Return the length of the longest word in the provided sentence.
 // Your response should be a number.
 
-function findLongestWordLength(str) {
-  const longest = str.split(' ').reduce(function (longest, currentWord) {
+const findLongestWordLength = (str) => {
+  const longest = str.split(' ').reduce((longest, currentWord) => {
     return currentWord.length > longest.length ? currentWord : longest;
   }, '');
   return longest.length;
-}
+};
 
 findLongestWordLength('The quick brown fox jumped over the lazy dog');
 
@@ -62,11 +60,7 @@ findLongestWordLength('The quick brown fox jumped over the lazy dog');
 
 // Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
 
-function largestOfFour(mainArray) {
-  return mainArray.map(function (subArray) {
-    return Math.max.apply(null, subArray);
-  });
-}
+const largestOfFour = (mainArray) => mainArray.map((subArray) => Math.max.apply(null, subArray));
 
 largestOfFour([
   [4, 5, 1, 3],
@@ -81,9 +75,7 @@ largestOfFour([
 // But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods
 // instead.
 
-function confirmEnding(str, target) {
-  return str.substr(-target.length) === target;
-}
+const confirmEnding = (str, target) => str.substr(-target.length) === target;
 
 confirmEnding('Bastian', 'n');
 
@@ -91,11 +83,11 @@ confirmEnding('Bastian', 'n');
 // Repeat a given string str (first argument) for num times (second argument).
 // Return an empty string if num is not a positive number.
 
-function repeatStringNumTimes(str, num) {
+const repeatStringNumTimes = (str, num) => {
   if (num <= 0) return '';
   if (num === 1) return str;
   else return str + repeatStringNumTimes(str, num - 1);
-}
+};
 
 repeatStringNumTimes('abc', 3);
 
@@ -104,12 +96,11 @@ repeatStringNumTimes('abc', 3);
 // if it is longer than the given maximum string length (second argument).
 // Return the truncated string with a ... ending.
 
-function truncateString(str, num) {
-  if (num >= str.length) {
-    return str;
-  }
+const truncateString = (str, num) => {
+  num >= str.length && str;
+
   return str.slice(0, num) + '...';
-}
+};
 
 truncateString('A-tisket a-tasket A green and yellow basket', 8);
 
@@ -118,9 +109,7 @@ truncateString('A-tisket a-tasket A green and yellow basket', 8);
 // returns the first element in the array that passes a truth test (second argument).
 // If no element passes the test, return undefined.
 
-function findElement(arr, func) {
-  return arr.filter(func)[0];
-}
+const findElement = (arr, func) => arr.filter(func)[0];
 
 findElement([1, 2, 3, 4], (num) => num % 2 === 0);
 
@@ -129,9 +118,7 @@ findElement([1, 2, 3, 4], (num) => num % 2 === 0);
 
 // Boolean primitives are true and false.
 
-function booWho(bool) {
-  return typeof bool === 'boolean';
-}
+const booWho = (bool) => typeof bool === 'boolean';
 
 booWho(null);
 
@@ -140,14 +127,11 @@ booWho(null);
 
 // For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
 
-function titleCase(str) {
-  return str
+const titleCase = (str) =>
+  str
     .toLowerCase()
     .split(' ')
-    .map(function (word) {
-      return word.replace(word[0], word[0].toUpperCase());
-    })
+    .map((word) => word.replace(word[0], word[0].toUpperCase()))
     .join(' ');
-}
 
 titleCase("I'm a little tea pot");
